@@ -5,5 +5,12 @@
     -fx-background-size: cover;
     -fx-background-position: center center;
     -fx-border-color: white;
-    -fx-border-width: 5;
+    -fx-border-width: 2;
+
 }
+#fliplist{
+    -fx-graphic: url('img_1.png');
+    -fx-content-display: bottom;
+    -fx-graphic-text-gap: 10;
+}
+

@@ -23,9 +23,9 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="41.0" layoutY="541.0" />
-      <TextField layoutX="41.0" layoutY="616.0" />
-      <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#32420f">
+      <TextField layoutX="41.0" layoutY="541.0" promptText="username" />
+      <TextField layoutX="41.0" layoutY="616.0" promptText="password" />
+      <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#c8ff00">
          <font>
             <Font size="18.0" />
          </font>
@@ -61,13 +61,13 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="362.0" layoutY="541.0" />
-      <TextField layoutX="362.0" layoutY="616.0" />
-      <TextField layoutX="634.0" layoutY="541.0" />
-      <TextField layoutX="634.0" layoutY="616.0" />
-      <TextField layoutX="472.0" layoutY="474.0" />
+      <TextField layoutX="362.0" layoutY="541.0" promptText="full name" />
+      <TextField layoutX="362.0" layoutY="616.0" promptText="username" />
+      <TextField layoutX="634.0" layoutY="541.0" promptText="password" />
+      <TextField layoutX="634.0" layoutY="616.0" promptText="password" />
+      <TextField layoutX="472.0" layoutY="474.0" promptText="Email Address" />
       <Button layoutX="553.0" layoutY="661.0" mnemonicParsing="false" style="-fx-background-color: #8ae498;" text="Sign Up" textFill="#020703" />
-      <Label fx:id="Login3" layoutX="76.0" layoutY="68.0" text="FlipList101" textFill="WHITE" wrapText="false">
+      <Label id="fliplist" fx:id="fliplistlabel" layoutX="76.0" layoutY="68.0" stylesheets="@styles.css" text="FlipList101" textFill="WHITE" wrapText="false">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
