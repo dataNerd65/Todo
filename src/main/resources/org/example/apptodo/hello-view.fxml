@@ -1,6 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="863.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="863.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="Login" layoutX="40.0" layoutY="456.0" text="Login " textFill="#eeff00" wrapText="false">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="507.0" text="Username" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="589.0" text="Password" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="41.0" layoutY="541.0" />
+      <TextField layoutX="41.0" layoutY="616.0" />
+      <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#020203">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="Login2" layoutX="432.0" layoutY="382.0" prefWidth="147.0" text="Sign Up" textFill="#dce80b" wrapText="false">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="80.0" layoutY="674.0" mnemonicParsing="false" style="-fx-background-color: #8ae498;" text="Login" textFill="#020703" />
+      <Label layoutX="432.0" layoutY="642.0" text="Username" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="452.0" layoutY="507.0" text="Full Name" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="621.0" layoutY="507.0" text="Password" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="644.0" layoutY="642.0" text="Confirm Password" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="495.0" layoutY="446.0" text="Email Address" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="406.0" layoutY="532.0" />
+      <TextField layoutX="406.0" layoutY="661.0" />
+      <TextField layoutX="595.0" layoutY="528.0" />
+      <TextField layoutX="634.0" layoutY="661.0" />
+      <TextField layoutX="472.0" layoutY="474.0" />
+   </children>
+</AnchorPane>
