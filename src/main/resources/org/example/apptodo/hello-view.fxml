@@ -25,33 +25,33 @@
       </Label>
       <TextField layoutX="41.0" layoutY="541.0" />
       <TextField layoutX="41.0" layoutY="616.0" />
-      <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#020203">
+      <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#32420f">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="Login2" layoutX="432.0" layoutY="382.0" prefWidth="147.0" text="Sign Up" textFill="#dce80b" wrapText="false">
+      <Label fx:id="Login2" layoutX="472.0" layoutY="393.0" prefWidth="147.0" text="Sign Up" textFill="#dce80b" wrapText="false">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
       <Button layoutX="80.0" layoutY="674.0" mnemonicParsing="false" style="-fx-background-color: #8ae498;" text="Login" textFill="#020703" />
-      <Label layoutX="432.0" layoutY="642.0" text="Username" textFill="WHITE">
+      <Label layoutX="361.0" layoutY="589.0" text="Username" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="452.0" layoutY="507.0" text="Full Name" textFill="WHITE">
+      <Label layoutX="362.0" layoutY="518.0" text="Full Name" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="621.0" layoutY="507.0" text="Password" textFill="WHITE">
+      <Label layoutX="634.0" layoutY="518.0" text="Password" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="644.0" layoutY="642.0" text="Confirm Password" textFill="WHITE">
+      <Label layoutX="634.0" layoutY="589.0" text="Confirm Password" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
@@ -61,10 +61,16 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="406.0" layoutY="532.0" />
-      <TextField layoutX="406.0" layoutY="661.0" />
-      <TextField layoutX="595.0" layoutY="528.0" />
-      <TextField layoutX="634.0" layoutY="661.0" />
+      <TextField layoutX="362.0" layoutY="541.0" />
+      <TextField layoutX="362.0" layoutY="616.0" />
+      <TextField layoutX="634.0" layoutY="541.0" />
+      <TextField layoutX="634.0" layoutY="616.0" />
       <TextField layoutX="472.0" layoutY="474.0" />
+      <Button layoutX="553.0" layoutY="661.0" mnemonicParsing="false" style="-fx-background-color: #8ae498;" text="Sign Up" textFill="#020703" />
+      <Label fx:id="Login3" layoutX="76.0" layoutY="68.0" text="FlipList101" textFill="WHITE" wrapText="false">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
