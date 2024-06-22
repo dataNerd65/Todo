@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 
 public class HelloController {
@@ -84,6 +85,18 @@ public class HelloController {
             String dbName = System.getenv("DB_NAME");
 
             Connection connection = DriverManager.getConnection(dbUrl+ "/" + dbName,  dbUser, dbPassword);
+
+            //Checking if username or email already exists
+            String checkSql = "SELECT * FROM users WHERE username = ? OR email = ?";
+            PreparedStatement checkStatement = connection.prepareStatement(checkSql);
+            checkStatement.setString(1, username);
+            checkStatement.setString(2, email);
+            ResultSet resultset = checkStatement.executeQuery();
+
+            if (resultset.next()) {
+                showAlert("Error", "Registration Failed", "Username or Password already exists!");
+                return;
+            }
 
             String sql = "INSERT INTO users (username, password, email, full_name) VALUES (?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
