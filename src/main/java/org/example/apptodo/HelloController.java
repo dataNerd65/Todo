@@ -15,7 +15,7 @@ public class HelloController {
     @FXML
     private Button loginButton;
     @FXML
-    private Button cancelButton;
+    private Button clearButton;
     @FXML
     private TextField email;
     @FXML
@@ -29,9 +29,9 @@ public class HelloController {
     @FXML
     private Button signupButton;
     @FXML
-    private Button cancel1;
+    private Button clearButton1;
     @FXML
-    public void handleCancelButtonAction(){
+    public void handleClearButtonAction(){
         System.out.println("Cancel Button clicked!");
         username.clear();
         password.clear();
@@ -50,7 +50,7 @@ public class HelloController {
 
     }
     @FXML
-    public void handleCancel1ButtonAction(){
+    public void handleClear1ButtonAction(){
         System.out.println("Cancel Button Clicked!");
 
     }
