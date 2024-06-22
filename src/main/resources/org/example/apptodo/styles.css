@@ -1,5 +1,4 @@
 .root {
-  /*  -fx-background-image: url('img.png');*/
     -fx-background-color: black;
     -fx-background-repeat: stretch;
     -fx-background-size: cover;
@@ -13,4 +12,9 @@
     -fx-content-display: bottom;
     -fx-graphic-text-gap: 10;
 }
-
+#mainpane{
+    -fx-background-image: url('img_4.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: top right;
+    -fx-background-size: 50% 50%;
+}
