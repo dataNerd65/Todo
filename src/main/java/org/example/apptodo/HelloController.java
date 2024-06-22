@@ -70,9 +70,11 @@ public class HelloController {
         //validating the user input
         if(username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || email.isEmpty() || fullName.isEmpty()) {
             showAlert("Error", "Invalid Input", "All fields must be filled out!");
+            return; // return to prevent method from still running
         }
-        if(password != confirmPassword) {
+        if(!password.equals(confirmPassword)) {
             showAlert("Error", "Invalid Input" , "Passwords do not match!");
+            return; // method returns immediately to prevent execution of the rest of the code
         }
         //Connecting to the database
         try{
@@ -91,9 +93,11 @@ public class HelloController {
             statement.setString(4, fullName);
 
             int rows = statement.executeUpdate();
-            //Trying out
+            //Trying out to tell user if success or failed
             if(rows > 0) {
                 showAlert("Success", "Success", "Account created successfully");
+            }else{
+                showAlert("Error", "Account creation Failure", "There was a problem creating your account. Please try again.");
             }
         } catch(Exception e){
             e.printStackTrace();
