@@ -9,6 +9,7 @@ module org.example.apptodo {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.desktop;
 
     opens org.example.apptodo to javafx.fxml;
     exports org.example.apptodo;
