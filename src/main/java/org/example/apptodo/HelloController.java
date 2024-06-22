@@ -7,7 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 
 public class HelloController {
@@ -71,6 +73,30 @@ public class HelloController {
         }
         if(password != confirmPassword) {
             showAlert("Error", "Invalid Input" , "Passwords do not match!");
+        }
+        //Connecting to the database
+        try{
+            String dbUrl = System.getenv("DB_URL");
+            String dbUser = System.getenv("DB_USER");
+            String dbPassword = System.getenv("DB_PASSWORD");
+            String dbName = System.getenv("DB_NAME");
+
+            Connection connection = DriverManager.getConnection(dbUrl+ "/" + dbName,  dbUser, dbPassword);
+
+            String sql = "INSERT INTO users (username, password, email, full_name) VALUES (?, ?, ?, ?)";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, username);
+            statement.setString(2, password);
+            statement.setString(3, email);
+            statement.setString(4, fullName);
+
+            int rows = statement.executeUpdate();
+            //Trying out
+            if(rows > 0) {
+                showAlert("Success", "Success", "Account created successfully");
+            }
+        } catch(Exception e){
+            e.printStackTrace();
         }
 
     }
