@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -29,7 +30,7 @@
       <PasswordField fx:id="password" layoutX="41.0" layoutY="616.0" promptText="password" />
       <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#c8ff00">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <Label fx:id="Login2" layoutX="472.0" layoutY="393.0" prefWidth="147.0" text="Sign Up" textFill="#dce80b" wrapText="false">
@@ -74,9 +75,9 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="cancelButton" layoutX="147.0" layoutY="674.0" mnemonicParsing="false" onAction="#handleClearButtonAction" style="-fx-background-color: #8ae498;" text="Clear" textFill="#eb3e0a" />
+      <Button fx:id="cancelButton" layoutX="116.0" layoutY="674.0" mnemonicParsing="false" onAction="#handleClearButtonAction" style="-fx-background-color: #8ae498;" text="Clear" textFill="#eb3e0a" />
       <Button fx:id="cancel1" layoutX="634.0" layoutY="661.0" mnemonicParsing="false" onAction="#handleClear1ButtonAction" style="-fx-background-color: #8ae498;" text="Clear" textFill="#eb3b0a" />
-      <Hyperlink layoutX="703.0" layoutY="662.0" text="Forgot Password" textFill="#674fff" underline="true">
+      <Hyperlink layoutX="193.0" layoutY="675.0" text="Forgot Password" textFill="#674fff" underline="true">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
@@ -86,5 +87,8 @@
             <Font name="System Italic" size="15.0" />
          </font>
       </Label>
+      <RadioButton layoutX="803.0" layoutY="545.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton layoutX="209.0" layoutY="620.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton layoutX="803.0" layoutY="620.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
    </children>
 </AnchorPane>
