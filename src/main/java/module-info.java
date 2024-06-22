@@ -10,6 +10,7 @@ module org.example.apptodo {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires java.desktop;
+    requires java.sql;
 
     opens org.example.apptodo to javafx.fxml;
     exports org.example.apptodo;
