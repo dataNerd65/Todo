@@ -73,7 +73,7 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="cancelButton" layoutX="147.0" layoutY="674.0" mnemonicParsing="false" onAction="#handleCancelButtonAction" style="-fx-background-color: #8ae498;" text="Cancel" textFill="#eb3e0a" />
-      <Button fx:id="cancel1" layoutX="634.0" layoutY="661.0" mnemonicParsing="false" onAction="#handleCancel1ButtonAction" style="-fx-background-color: #8ae498;" text="Cancel" textFill="#eb3b0a" />
+      <Button fx:id="cancelButton" layoutX="147.0" layoutY="674.0" mnemonicParsing="false" onAction="#handleClearButtonAction" style="-fx-background-color: #8ae498;" text="Clear" textFill="#eb3e0a" />
+      <Button fx:id="cancel1" layoutX="634.0" layoutY="661.0" mnemonicParsing="false" onAction="#handleClear1ButtonAction" style="-fx-background-color: #8ae498;" text="Clear" textFill="#eb3b0a" />
    </children>
 </AnchorPane>
