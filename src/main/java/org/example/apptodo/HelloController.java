@@ -1,5 +1,6 @@
 package org.example.apptodo;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -45,43 +46,30 @@ public class HelloController {
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.showAndWait();
+    }public void initialize(){
+        //Setting the initial visibility of the PasswordField and TextField
+        password.setVisible(true);
+        visiblePassword.setVisible(false);
+        password2.setVisible(true);
+        visiblePassword2.setVisible(false);
+        password3.setVisible(true);
+        visiblePassword3.setVisible(false);
     }
-    //visibility of passwords
-    public void initialize(){
-        Radio1.selectedProperty().addListener((observable, oldValue, newValue )-> {
-            if (newValue) {
-               visiblePassword.setText(password.getText());
-               visiblePassword.setVisible(true);
-               password.setVisible(false);
-            } else {
+    @FXML
+    public void handleRadioButtonAction(){
+        if(visiblePassword != null && password != null){
+            if(Radio1.isSelected()){
+                visiblePassword.setText(password.getText());
+                visiblePassword.setVisible(true);
+                password.setVisible(false);
+            }else{
                 password.setText(visiblePassword.getText());
                 visiblePassword.setVisible(false);
                 password.setVisible(true);
             }
-        });
-        Radio2.selectedProperty().addListener((observable, oldValue, newValue )->{
-            if (newValue){
-                visiblePassword2.setText(password2.getText());
-                visiblePassword2.setVisible(true);
-                password2.setVisible(false);
-            } else{
-                password2.setText(visiblePassword.getText());
-                visiblePassword2.setVisible(false);
-                password2.setVisible(true);
-            }
-        });
-        Radio3.selectedProperty().addListener((observable, oldValue, newValue )-> {
-            if (newValue) {
-                visiblePassword3.setText(password.getText());
-                visiblePassword3.setVisible(true);
-                password3.setVisible(false);
-            } else {
-                password3.setText(visiblePassword.getText());
-                visiblePassword3.setVisible(false);
-                password3.setVisible(true);
-            }
-        });
+        }
     }
+
     @FXML
     public void handleClearButtonAction(){
         System.out.println("Cancel Button clicked!");
