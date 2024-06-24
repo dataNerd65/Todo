@@ -28,7 +28,7 @@
       </Label>
       <TextField fx:id="username" layoutX="41.0" layoutY="541.0" promptText="username" />
       <PasswordField fx:id="password" layoutX="41.0" layoutY="616.0" promptText="password" />
-      <TextField fx:id="visiblePassword" layoutX="41.0" layoutY="616.0" promptText="false" />
+      <TextField fx:id="visiblePassword" layoutX="41.0" layoutY="616.0" promptText="password" />
       <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#c8ff00">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -90,8 +90,8 @@
             <Font name="System Italic" size="15.0" />
          </font>
       </Label>
-      <RadioButton fx:id="Radio2" layoutX="803.0" layoutY="545.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
-      <RadioButton fx:id="Radio1" layoutX="209.0" layoutY="620.0" mnemonicParsing="false" onAction="#initialize" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
-      <RadioButton fx:id="Radio3" layoutX="803.0" layoutY="620.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton fx:id="Radio2" layoutX="803.0" layoutY="545.0" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton fx:id="Radio1" layoutX="209.0" layoutY="620.0" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton fx:id="Radio3" layoutX="803.0" layoutY="620.0" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
    </children>
 </AnchorPane>
