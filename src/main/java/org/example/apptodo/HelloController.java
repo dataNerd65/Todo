@@ -54,20 +54,35 @@ public class HelloController {
         visiblePassword2.setVisible(false);
         password3.setVisible(true);
         visiblePassword3.setVisible(false);
+
+//        Radio1.setOnAction(e -> handleRadioButtonAction(Radio1, password, visiblePassword));
+//        Radio2.setOnAction(e -> handleRadioButtonAction(Radio2, password2, visiblePassword2));
+//        Radio3.setOnAction(e -> handleRadioButtonAction(Radio3, password3, visiblePassword3));
     }
     @FXML
-    public void handleRadioButtonAction(){
-        if(visiblePassword != null && password != null){
-            if(Radio1.isSelected()){
-                visiblePassword.setText(password.getText());
-                visiblePassword.setVisible(true);
-                password.setVisible(false);
+    public void handleRadioButtonAction(RadioButton radioButton, PasswordField passwordField, TextField visiblePasswordField){
+        if(visiblePasswordField != null && passwordField != null){
+            if(radioButton.isSelected()){
+                visiblePasswordField.setText(passwordField.getText());
+                visiblePasswordField.setVisible(true);
+                passwordField.setVisible(false);
             }else{
-                password.setText(visiblePassword.getText());
-                visiblePassword.setVisible(false);
-                password.setVisible(true);
+                passwordField.setText(visiblePasswordField.getText());
+                visiblePasswordField.setVisible(false);
+                passwordField.setVisible(true);
             }
         }
+    }
+    @FXML
+    public void handleRadio1Action(){
+        handleRadioButtonAction(Radio1, password, visiblePassword);
+    }
+    @FXML
+    public void handleRadio2Action(){
+        handleRadioButtonAction(Radio2, password2, visiblePassword2);
+    } @FXML
+    public void handleRadio3Action(){
+        handleRadioButtonAction(Radio3, password3, visiblePassword3);
     }
 
     @FXML
