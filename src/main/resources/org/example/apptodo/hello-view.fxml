@@ -28,6 +28,7 @@
       </Label>
       <TextField fx:id="username" layoutX="41.0" layoutY="541.0" promptText="username" />
       <PasswordField fx:id="password" layoutX="41.0" layoutY="616.0" promptText="password" />
+      <TextField fx:id="visiblePassword" layoutX="41.0" layoutY="616.0" promptText="false" />
       <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#c8ff00">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -66,8 +67,10 @@
       </Label>
       <TextField fx:id="Fname" layoutX="362.0" layoutY="541.0" promptText="full name" />
       <TextField fx:id="username1" layoutX="362.0" layoutY="616.0" promptText="username" />
-      <PasswordField fx:id="password2" layoutX="634.0" layoutY="541.0" promptText="password" />
-      <PasswordField fx:id="password3" layoutX="634.0" layoutY="616.0" promptText="password" />
+      <PasswordField fx:id="password2" layoutX="634.0" layoutY="541.0" onAction="#initialize" promptText="password" />
+      <TextField fx:id="visiblePassword2" layoutX="634.0" layoutY="541.0" promptText="password" visible="false" />
+      <PasswordField fx:id="password3" layoutX="634.0" layoutY="616.0" onAction="#initialize" promptText="password" />
+      <TextField fx:id="visiblePassword3" layoutX="634.0" layoutY="616.0" promptText="password" visible="false" />
       <TextField fx:id="email" layoutX="472.0" layoutY="474.0" promptText="Email Address" />
       <Button fx:id="signupButton" layoutX="458.0" layoutY="661.0" mnemonicParsing="false" onAction="#handleSignUpButtonAction" style="-fx-background-color: #8ae498;" text="Sign Up" textFill="#020703" />
       <Label id="fliplist" fx:id="fliplistlabel" layoutX="76.0" layoutY="68.0" stylesheets="@styles.css" text="FlipList101" textFill="WHITE" wrapText="false">
@@ -87,8 +90,8 @@
             <Font name="System Italic" size="15.0" />
          </font>
       </Label>
-      <RadioButton layoutX="803.0" layoutY="545.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
-      <RadioButton layoutX="209.0" layoutY="620.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
-      <RadioButton layoutX="803.0" layoutY="620.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton fx:id="Radio2" layoutX="803.0" layoutY="545.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton fx:id="Radio1" layoutX="209.0" layoutY="620.0" mnemonicParsing="false" onAction="#initialize" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
+      <RadioButton fx:id="Radio3" layoutX="803.0" layoutY="620.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0" text="RadioButton" />
    </children>
 </AnchorPane>
