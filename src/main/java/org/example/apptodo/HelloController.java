@@ -1,6 +1,7 @@
 package org.example.apptodo;
 
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -9,7 +10,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class HelloController {
@@ -39,6 +41,8 @@ public class HelloController {
     private TextField visiblePassword2;
     @FXML
     private TextField visiblePassword3;
+    @FXML
+    private ChangeListener<Boolean> focusChangeListener;
 
     public void showAlert(String title, String header, String content){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -46,7 +50,12 @@ public class HelloController {
         alert.setHeaderText(header);
         alert.setContentText(content);
         alert.showAndWait();
-    }public void initialize(){
+
+    }
+
+    private Map<TextField, RadioButton> fieldToButtonMap = new HashMap<>();
+
+    public void initialize(){
         //Setting the initial visibility of the PasswordField and TextField
         password.setVisible(true);
         visiblePassword.setVisible(false);
@@ -55,9 +64,9 @@ public class HelloController {
         password3.setVisible(true);
         visiblePassword3.setVisible(false);
 
-//        Radio1.setOnAction(e -> handleRadioButtonAction(Radio1, password, visiblePassword));
-//        Radio2.setOnAction(e -> handleRadioButtonAction(Radio2, password2, visiblePassword2));
-//        Radio3.setOnAction(e -> handleRadioButtonAction(Radio3, password3, visiblePassword3));
+        handleRadioButtonAction(Radio1, password, visiblePassword);
+        handleRadioButtonAction(Radio2, password2, visiblePassword2);
+        handleRadioButtonAction(Radio3, password3, visiblePassword3);
     }
     @FXML
     public void handleRadioButtonAction(RadioButton radioButton, PasswordField passwordField, TextField visiblePasswordField){
@@ -66,6 +75,27 @@ public class HelloController {
                 visiblePasswordField.setText(passwordField.getText());
                 visiblePasswordField.setVisible(true);
                 passwordField.setVisible(false);
+
+                //remove all listeners from the focusedProperty
+                if(focusChangeListener != null) {
+                    visiblePasswordField.focusedProperty().removeListener(focusChangeListener);
+                }
+
+
+                //Add focusProperty listener to TextField
+                visiblePasswordField.focusedProperty().addListener(focusChangeListener = (observable, oldValue, newValue)-> {
+                    if(newValue == false) {//if focus is lost
+                        RadioButton associatedButton = fieldToButtonMap.get(visiblePasswordField);
+                        //radioButton.setSelected(false);
+                        if (associatedButton != null){
+                            associatedButton.setSelected(false);
+                            visiblePasswordField.setVisible(false);
+                            passwordField.setVisible(true);
+                        }
+                    }
+                });
+                //Store the RadioButton associated with the TextField
+                fieldToButtonMap.put(visiblePasswordField, radioButton);
             }else{
                 passwordField.setText(visiblePasswordField.getText());
                 visiblePasswordField.setVisible(false);
