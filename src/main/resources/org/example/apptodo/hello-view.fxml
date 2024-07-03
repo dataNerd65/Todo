@@ -28,7 +28,7 @@
       </Label>
       <TextField fx:id="username" layoutX="41.0" layoutY="541.0" promptText="username" />
       <PasswordField fx:id="password" layoutX="41.0" layoutY="616.0" promptText="password" />
-      <TextField fx:id="visiblePassword" layoutX="41.0" layoutY="616.0" promptText="password"/>
+      <TextField fx:id="visiblePassword" layoutX="41.0" layoutY="616.0" promptText="password" />
       <Label fx:id="Login1" layoutX="298.0" layoutY="474.0" prefHeight="115.0" prefWidth="33.0" text="OR" textAlignment="CENTER" textFill="#c8ff00">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -85,7 +85,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Hyperlink>
-      <Label layoutX="122.0" layoutY="348.0" text="The list that works for you" textFill="WHITE">
+      <Label fx:id="word" layoutX="122.0" layoutY="348.0" text="The list that works for you" textFill="WHITE">
          <font>
             <Font name="System Italic" size="15.0" />
          </font>
