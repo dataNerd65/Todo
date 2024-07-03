@@ -1,15 +1,13 @@
 package org.example.apptodo;
 
-import javafx.application.Platform;
+import javafx.animation.PauseTransition;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.util.Duration;
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,7 +47,12 @@ public class HelloController {
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(content);
-        alert.showAndWait();
+        alert.show();
+
+        //Creating a pauseTransition that lasts 3 seconds
+        PauseTransition delay = new PauseTransition(Duration.seconds(2));
+        delay.setOnFinished(event -> alert.close()); //close the alert when the pause is finished
+        delay.play(); //starting the pause
 
     }
 
@@ -80,7 +83,6 @@ public class HelloController {
                 if(focusChangeListener != null) {
                     visiblePasswordField.focusedProperty().removeListener(focusChangeListener);
                 }
-
 
                 //Add focusProperty listener to TextField
                 visiblePasswordField.focusedProperty().addListener(focusChangeListener = (observable, oldValue, newValue)-> {
@@ -121,12 +123,41 @@ public class HelloController {
         username.clear();
         password.clear();
     }
+    private Connection getConnection() throws SQLException{
+        String dbUrl = System.getenv("DB_URL");
+        String dbUser = System.getenv("DB_USER");
+        String dbPassword = System.getenv("DB_PASSWORD");
+        String dbName = System.getenv("DB_NAME");
+        return DriverManager.getConnection(dbUrl + "/" +dbName, dbUser, dbPassword);
+    }
     @FXML
     public void handleLoginButtonAction(){
-        if (username.getText().isEmpty() || password.getText().isEmpty()){
+        String inputUsername = username.getText();
+        String inputPassword = password.getText();
+
+
+        if (inputUsername.isEmpty() || inputPassword.isEmpty()){
             System.out.println("Username or password cannot be empty!");
-        }else{
-            System.out.println("Username: " + username.getText() + " ,Password: " +password.getText());
+            return;
+        }
+        try{
+            Connection connection = getConnection();
+            String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setString(1, inputUsername);
+            statement.setString(2, inputPassword);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            if (resultSet.next()) {
+                showAlert("Login Success", "Welcome", "You have successfully logged in.");
+            }else{
+                showAlert("Login Failed", "Error! Invalid Credentials", "Username or password is incorrect.");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            showAlert("Database Error", "Connection Failure", "Could not connect to the database. Please try again later.");
         }
 
     }
@@ -150,12 +181,7 @@ public class HelloController {
         }
         //Connecting to the database
         try{
-            String dbUrl = System.getenv("DB_URL");
-            String dbUser = System.getenv("DB_USER");
-            String dbPassword = System.getenv("DB_PASSWORD");
-            String dbName = System.getenv("DB_NAME");
-
-            Connection connection = DriverManager.getConnection(dbUrl+ "/" + dbName,  dbUser, dbPassword);
+            Connection connection = getConnection();
 
             //Checking if username or email already exists
             String checkSql = "SELECT * FROM users WHERE username = ? OR email = ?";
